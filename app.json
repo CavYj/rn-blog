@@ -2,6 +2,8 @@
   "expo": {
     "name": "goat-blog",
     "slug": "goat-blog",
+    "main": "expo-router/entry",
+    "scheme": "goat",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -30,6 +32,9 @@
       "eas": {
         "projectId": "b3f8d77e-450f-4ebc-a234-3f8a8d8accfd"
       }
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
