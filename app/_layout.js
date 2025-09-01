@@ -1,12 +1,16 @@
-import { Stack } from 'expo-router'
+import { Stack } from 'expo-router';
+import React from 'react';
 
-export default function Layout() {
-    return (
-        <Stack
-            screenOptions={{ 
-                headerTitleAlign: 'center', //安卓标题居中
-                animation: 'slide_from_right', //安卓使用左右切屏
-            }}
-        />
-    )
+export default function RootLayout() {
+return (
+    <Stack
+    screenOptions={{
+        headerTitleAlign: 'center',
+        animation: 'slide_from_right',
+    }}
+    >
+    <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    <Stack.Screen name="about" options={{ title: '关于页' }} />
+    </Stack>
+);
 }
