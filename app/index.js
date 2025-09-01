@@ -1,9 +1,23 @@
-import { Link } from 'expo-router';
+import { Link, useNavigation } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import React from 'react'; 
+import React, { useEffect } from 'react';
 
 export default function Home() {
+
+  // 获取导航实例
+  const navigation = useNavigation();
+
+  // 组件挂载时设置一次固定标题（因标题固定，无需依赖项）
+  useEffect(() => {
+    navigation.setOptions({
+      title: '主页', // 固定标题
+      // 可选：其他导航栏样式
+      headerTintColor: 'green'
+    });
+  }, [navigation]); // 仅依赖navigation，组件挂载时执行一次
+
+
   return (
     <View style={styles.container}>
       <Text>欢迎进入杨钧的个人博客</Text>
